@@ -38,20 +38,25 @@ def check_validity(report):
     return safe
 
 
+true_safe_count = 0
+tolerant_safe_count = 0
+
 for line in data:
     report = [int(i) for i in line.split()]
 
     safe = check_validity(report)
     
     if safe:
-        safe_count += 1
+        true_safe_count += 1
+        tolerant_safe_count += 1
 
     else:
         for i in range(len(report)):
             safe = check_validity(report[:i] + report[i + 1:])
 
             if safe:
-                safe_count += 1
+                tolerant_safe_count += 1
                 break
 
-print(safe_count)
+print(true_safe_count)
+print(tolerant_safe_count)
