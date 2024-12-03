@@ -17,21 +17,19 @@ pointer = 0
 
 while pointer < len(memory):
     if not insert_mode:
-        mul_key = "".join(memory[pointer:pointer+4])
-        do_key = "".join(memory[pointer:pointer+4])
-        dont_key = "".join(memory[pointer:pointer+7])
+        key = memory[pointer:pointer+7]
 
-        if do_key == "do()":
+        if key[:4] == "do()":
             pointer += 4
             instructions_enabled = True
             continue
 
-        if dont_key == "don't()":
+        if key[:7] == "don't()":
             pointer += 7
             instructions_enabled = False
             continue
 
-        if mul_key == "mul(":
+        if key[:4] == "mul(":
             pointer += 4
             insert_mode = True
             continue
