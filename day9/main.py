@@ -38,10 +38,6 @@ p1 = 0
 p2 = len(res) - 1
 checksum = 0
 
-# print(res)
-# print("".join(list(map(str, res))))
-
-
 while p1 < p2:
     if res[p1] == period:
         while res[p2] == period:
@@ -53,7 +49,7 @@ while p1 < p2:
     p1 += 1
 
 
-print(checksum)
+print(f"Part 1: {checksum}")
 
 # ----------------------------------------------------------- part 2 ----------------------------------------------------------- #
 
@@ -110,4 +106,4 @@ for sub_list in compact_res:
         checksum += int(element) * index
         index += 1
 
-print(checksum)
+print(f"Part 2: {checksum}")
