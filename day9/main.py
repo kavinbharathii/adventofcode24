@@ -34,26 +34,26 @@ for index, num in enumerate(data):
 
 # ----------------------------------------------------------- part 1 ----------------------------------------------------------- #
 
-# p1 = 0
-# p2 = len(res) - 1
-# checksum = 0
+p1 = 0
+p2 = len(res) - 1
+checksum = 0
 
-# # print(res)
-# # print("".join(list(map(str, res))))
-
-
-# while p1 < p2:
-#     if res[p1] == period:
-#         while res[p2] == period:
-#             p2 -= 1
-
-#         res[p1], res[p2] = res[p2], res[p1]
-
-#     checksum += p1 * int(res[p1])
-#     p1 += 1
+# print(res)
+# print("".join(list(map(str, res))))
 
 
-# print(checksum)
+while p1 < p2:
+    if res[p1] == period:
+        while res[p2] == period:
+            p2 -= 1
+
+        res[p1], res[p2] = res[p2], res[p1]
+
+    checksum += p1 * int(res[p1])
+    p1 += 1
+
+
+print(checksum)
 
 # ----------------------------------------------------------- part 2 ----------------------------------------------------------- #
 
